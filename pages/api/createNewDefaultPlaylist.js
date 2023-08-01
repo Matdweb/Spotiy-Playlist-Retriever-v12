@@ -3,7 +3,7 @@ import getUserId from '../../lib/spotify/getUserId';
 import { getSession } from "next-auth/react";
 
 
-const createNewPlaylist = async (req, res) => {
+const createNewDefaultPlaylist = async (req, res) => {
     const session = await getSession({ req });
     const refresh_token = session.token.accessToken;
     const id = await getUserId(refresh_token);
@@ -23,7 +23,7 @@ const createNewPlaylist = async (req, res) => {
     })
     const data = await response.json();
 
-    return res.status(200).json(data);
+    return JSON.stringify(data);
 }
 
-export default createNewPlaylist;
+export default createNewDefaultPlaylist;
