@@ -1,6 +1,7 @@
 import styles from '../styles/components/NotSignedIn.module.css'
 import Image from 'next/image'
 import emoji from '../assets/img/sad_emoji.svg'
+import { signIn } from 'next-auth/react'
 
 function NotSignedIn() {
   return (
@@ -12,7 +13,7 @@ function NotSignedIn() {
         className={styles.img}
         alt='sad emoji'
       />
-      <button className={styles.btn}>Sign In</button>
+      <button onClick={()=> signIn()} className={styles.btn}>Sign In</button>
     </div>
   )
 }
