@@ -15,10 +15,45 @@ a {
   box-sizing: border-box;
 }
 
+* {
+  /* font-family: Inter; */
+  font-style: normal;
+  line-height: normal;
+}
+
+p.txt-normal {
+  color: #FFF;
+  font-weight: 400;
+}
+
+h1.primary-title {
+  color: #FFF;
+  font-size: 3.7rem;
+  font-weight: 900;
+}
+
+.bold-txt {
+  color: #FFF;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.btn-primary {
+  border: none;
+  background-color: #FFF;
+  border-radius: 0.8rem;
+  padding: 1.3rem 1.9rem;
+  font-size: 2rem;
+  font-weight: 400;
+  color: #000;
+  margin-left: 2.5rem;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
+
   body {
     color: white;
     background: black;

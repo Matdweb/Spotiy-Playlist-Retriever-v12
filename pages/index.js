@@ -2,6 +2,7 @@
 import { useSession, signIn, signOut } from 'next-auth/react';
 import { useState } from 'react';
 import NotSignedIn from '../components/NotSignedIn';
+import SignIn from '../components/SignIn'
 
 export default function Home() {
   const { data: session } = useSession();
@@ -21,6 +22,7 @@ export default function Home() {
   if (session) {
     return (
       <>
+        <SignIn />
         Signed in as {session?.token?.name} <br />
         <button onClick={() => signOut()}>Sign out</button>
         <button onClick={() => getUsersPlaylists()}>get playlists</button>
