@@ -23,9 +23,9 @@ export default function Home() {
     return (
       <>
         <SignIn />
-        Signed in as {session?.token?.name} <br />
-        <button onClick={() => signOut()}>Sign out</button>
-        <button onClick={() => getUsersPlaylists()}>get playlists</button>
+        <button className='btn-primary' onClick={() => getUsersPlaylists()}>Get my playlists</button>
+        <button className='btn-primary' onClick={''}>Create a new Playlists</button>
+        <span className='gray-txt'>Clean Page</span>
         {playlists.map((item) => (
           <div key={item.id}>
             <h1>{item.name}</h1>
