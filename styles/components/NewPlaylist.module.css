@@ -1,0 +1,14 @@
+.father{
+    margin-left: 2.5rem;
+}
+
+.container {
+    width: 42rem;
+    height: 16rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: start;
+    font-size: 1.8rem;
+}
+

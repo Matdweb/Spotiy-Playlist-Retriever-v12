@@ -8,10 +8,10 @@ function Playlist({ content }) {
             <div className={styles.container}>
                 <img className={styles.img} src={content.images[0]?.url} alt='Playlist image' />
                 <div className={styles.playlistInfo} >
-                    <label className={styles.label}>Owner</label>
-                    <p className={styles.txt}>{content.owner.display_name}</p> <br />
-                    <label className={styles.label}>Description</label>
-                    <p className={styles.txt}>{content.description}</p>
+                    <label>Owner</label>
+                    <p className={styles.txt}>{content?.owner.display_name}</p> <br />
+                    <label>Description</label>
+                    <p className={styles.txt}>{content?.playlist.description}</p>
                 </div>
             </div>
         </div>

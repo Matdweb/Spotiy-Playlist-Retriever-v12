@@ -6,7 +6,7 @@
     width: 100%;
     display: flex;
     flex-flow: row nowrap;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: flex-end;
 }
 
@@ -14,12 +14,6 @@
     width: 15rem;
     height: 15rem;
     margin-right: 2rem;
-}
-
-.label {
-    font-size: 1.875rem;
-    opacity: .5;
-    font-weight: 300;
 }
 
 .txt{
