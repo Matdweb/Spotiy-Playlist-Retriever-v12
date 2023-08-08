@@ -26,7 +26,7 @@ export default function Home() {
         <SignIn />
         <button className='btn-primary' onClick={() => getUsersPlaylists()}>Get my playlists</button>
         <button className='btn-primary' onClick={''}>Create a new Playlists</button>
-        <span className='gray-txt'>Clean Page</span>
+        <span className='gray-txt' onClick={()=> setPlaylists([])}>Clean Page</span>
         {playlists.map((item) => (
           <Playlist content={item} />
         ))}
