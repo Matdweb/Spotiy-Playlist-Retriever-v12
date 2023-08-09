@@ -1,0 +1,61 @@
+.father {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.90);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: #000;
+    width: 40rem;
+    border-radius: 2rem;
+    border: 5px solid #FFF;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-flow: column nowrap;
+    padding: 3rem 2rem;
+}
+
+.title{
+    margin: 0;
+    margin-bottom: .5rem;
+}
+
+.msj{
+    font-size: 1.8rem;
+    margin-bottom: 4rem;
+}
+
+.txt{
+    font-size: 1.5rem;
+}
+
+.songsContainer {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.songsContainer p{
+    margin: 0 .3rem;
+}
+
+.songsContainer p:nth-child(1){
+    margin: 0;
+}
+
+.song{
+    opacity: .6;
+}
+
+@media only screen and (max-width: 425px) {
+    .msj{
+        font-size: 1.2rem;
+        margin-bottom: 3rem;
+    }
+  }
