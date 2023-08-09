@@ -11,7 +11,7 @@ function Playlist({ content }) {
                     <label>Owner</label>
                     <p className={styles.txt}>{content?.owner.display_name}</p> <br />
                     <label>Description</label>
-                    <p className={styles.txt}>{content?.playlist.description}</p>
+                    <p className={styles.txt}>{content?.description}</p>
                 </div>
             </div>
         </div>
