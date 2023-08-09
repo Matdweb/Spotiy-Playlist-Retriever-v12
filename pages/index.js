@@ -4,10 +4,13 @@ import { useState } from 'react';
 import NotSignedIn from '../components/NotSignedIn';
 import SignIn from '../components/SignIn'
 import Playlist from '../components/Playlist'
+import NewPlaylistMessage from '../components/NewPlaylistMessage';
 
 export default function Home() {
   const { data: session } = useSession();
   const [playlists, setPlaylists] = useState([]);
+  const [newPlaylistCreated, setNewPlaylistCreated] = useState(false);
+  const [newPlaylist, setNewPlaylist] = useState({});
 
   const getUsersPlaylists = async () => {
     try {
@@ -20,13 +23,36 @@ export default function Home() {
     }
   }
 
+  
+  const createNewPlaylist = async () => {
+    try {
+      const res = await fetch('api/addItemsToPlaylists');
+      const data = await res.json();
+      setNewPlaylist(data);
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
+  const handleCreateNewPlaylist = async () => {
+    await createNewPlaylist();
+    setNewPlaylistCreated(!newPlaylistCreated);
+  }
+  
   if (session) {
     return (
       <>
         <SignIn />
         <button className='btn-primary' onClick={() => getUsersPlaylists()}>Get my playlists</button>
-        <button className='btn-primary' onClick={''}>Create a new Playlists</button>
-        <span className='gray-txt' onClick={()=> setPlaylists([])}>Clean Page</span>
+        <button className='btn-primary' onClick={() => handleCreateNewPlaylist()}>Create a new Playlists</button>
+
+        {/* <span className='gray-txt' onClick={() => {
+          setPlaylists([]);
+          setNewPlaylist(false);
+        }}>Clean Page</span> */}
+
+        {newPlaylistCreated ? <NewPlaylistMessage content={newPlaylist} /> : ''}
+
         {playlists.map((item) => (
           <Playlist content={item} />
         ))}
