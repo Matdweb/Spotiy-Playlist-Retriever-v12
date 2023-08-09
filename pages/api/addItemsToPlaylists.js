@@ -24,9 +24,9 @@ const addItemsToPlaylists = async (req, res) => {
         })
     })
 
-    const addItem = await add.json();
+    const {snapshot_id} = await add.json();
 
-    return res.status(200).json(addItem);
+    return res.status(200).json({snapshot_id, playlist: data});
 }
 
 export default addItemsToPlaylists;
