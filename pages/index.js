@@ -36,12 +36,12 @@ export default function Home() {
 
   const handleCreateNewPlaylist = async () => {
     await createNewPlaylist();
-    setNewPlaylistCreated(!newPlaylistCreated);
+    setNewPlaylistCreated(true);
   }
   
   const toggleCleanPage = () => {
     setPlaylists([]);
-    setNewPlaylistCreated(!newPlaylistCreated);
+    setNewPlaylistCreated(false);
   }
 
   if (session) {
