@@ -39,6 +39,11 @@ export default function Home() {
     setNewPlaylistCreated(!newPlaylistCreated);
   }
   
+  const toggleCleanPage = () => {
+    setPlaylists([]);
+    setNewPlaylistCreated(!newPlaylistCreated);
+  }
+
   if (session) {
     return (
       <>
@@ -46,10 +51,7 @@ export default function Home() {
         <button className='btn-primary' onClick={() => getUsersPlaylists()}>Get my playlists</button>
         <button className='btn-primary' onClick={() => handleCreateNewPlaylist()}>Create a new Playlists</button>
 
-        {/* <span className='gray-txt' onClick={() => {
-          setPlaylists([]);
-          setNewPlaylist(false);
-        }}>Clean Page</span> */}
+        <span className='gray-txt' onClick={() => toggleCleanPage()}>Clean Page</span>
 
         {newPlaylistCreated ? <NewPlaylistMessage content={newPlaylist} /> : ''}
 
