@@ -20,3 +20,19 @@
     font-size: 1.875rem;
     margin: 0;
 }
+
+
+@media only screen and (max-width: 425px) {
+    .container {
+        font-size: 1.2rem;
+    }
+    .img{
+        margin-right: 1rem;
+        width: 8rem;
+        height: 8rem;
+    }
+    .txt{
+        font-size: 1rem;
+    }
+  }
+  
