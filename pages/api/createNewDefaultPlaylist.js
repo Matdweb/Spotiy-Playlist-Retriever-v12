@@ -17,7 +17,7 @@ const createNewDefaultPlaylist = async (req, res) => {
         },
         body: JSON.stringify({
             "name": "New Playlist Spotify API",
-            "description": "New playlist description",
+            "description": "New playlist defualt description",
             "public": false
         })
     })
