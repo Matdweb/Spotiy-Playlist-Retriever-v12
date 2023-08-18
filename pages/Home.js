@@ -56,7 +56,7 @@ export default function Home() {
         {newPlaylistCreated ? <NewPlaylistMessage content={newPlaylist} /> : ''}
 
         {playlists.map((item) => (
-          <Playlist content={item} />
+          <Playlist key={item.id} content={item} />
         ))}
       </>
     );
