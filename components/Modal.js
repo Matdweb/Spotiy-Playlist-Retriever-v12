@@ -14,7 +14,7 @@ function Modal({ toggleModal }) {
 
     return (
         <div onClick={() => toggleModal()} className={styles.father}>
-            <div className={styles.modal} >
+            <div className={styles.modal}>
                 <h1 className={styles.title + " primary-title"}>Important</h1>
                 <p className={styles.message}>This is just an experimental app so you
                     can’t choose the songs in your new playlists</p>
