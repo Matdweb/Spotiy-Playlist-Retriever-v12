@@ -2,7 +2,7 @@
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) that retrives the playList or playLists of an authenticated user with the Spotify API
 
-Here you can take a look at the Figma prototype https://www.figma.com/file/vC75e7Rda1IiLSC6SmKztR/Spotify-Playlists-Retriever-next_v12?type=design&node-id=0%3A1&mode=design&t=dveafw1P5ssLiuSS-1 
+Here you can take a look at the Figma prototype [`Figma`](https://www.figma.com/file/vC75e7Rda1IiLSC6SmKztR/Spotify-Playlists-Retriever-next_v12?type=design&node-id=0%3A1&mode=design&t=dveafw1P5ssLiuSS-1)
 
 ## Getting Started
 
@@ -21,6 +21,19 @@ You can start editing the page by modifying `pages/index.js`. The page auto-upda
 [API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+
+## More about this application's APIs
+
+This app works with [`Next Auth`](https://next-auth.js.org/) for user autenthication
+
+This app also has 2 API endpoints: `addItemsToPlaylists` & `playlists`
+
+**addItemsToPlaylists**
+This API endpoint uses the `createNewDefaultPlaylist` to create a new playlist in the user's account with no songs. Then, it makes a `POST` request with the new playlist's credentials and adds the `Blad Blood - Taylor Swift` and `Photograph - Ed Sheeran` songs to this new playlist created. 
+In the app's layout after creating the playlist and adding the songs, it displays a message of success!
+
+**playlist**
+This API endpoint makes a `GET` request to Spotify API to retrieve a user's playlist. This info is handled as an array in the `Home` component and then displays in the layout with each song's name and description
 
 ## Learn More
 
