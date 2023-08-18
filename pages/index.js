@@ -1,69 +1,15 @@
-'use client'
-import { useSession, signIn, signOut } from 'next-auth/react';
-import { useState } from 'react';
-import NotSignedIn from '../components/NotSignedIn';
-import SignIn from '../components/SignIn'
-import Playlist from '../components/Playlist'
-import NewPlaylistMessage from '../components/NewPlaylistMessage';
+import Head from "next/head"
+import Home from "./Home"
 
-export default function Home() {
-  const { data: session } = useSession();
-  const [playlists, setPlaylists] = useState([]);
-  const [newPlaylistCreated, setNewPlaylistCreated] = useState(false);
-  const [newPlaylist, setNewPlaylist] = useState({});
-
-  const getUsersPlaylists = async () => {
-    try {
-      const response = await fetch('api/playlists')
-      const { items } = await response.json();
-      console.log(items);
-      setPlaylists(items)
-    } catch (e) {
-      console.log(e);
-    }
-  }
-
-  
-  const createNewPlaylist = async () => {
-    try {
-      const res = await fetch('api/addItemsToPlaylists');
-      const data = await res.json();
-      setNewPlaylist(data);
-    } catch (e) {
-      console.log(e);
-    }
-  }
-
-  const handleCreateNewPlaylist = async () => {
-    await createNewPlaylist();
-    setNewPlaylistCreated(true);
-  }
-  
-  const toggleCleanPage = () => {
-    setPlaylists([]);
-    setNewPlaylistCreated(false);
-  }
-
-  if (session) {
-    return (
-      <>
-        <SignIn />
-        <button className='btn-primary' onClick={() => getUsersPlaylists()}>Get my playlists</button>
-        <button className='btn-primary' onClick={() => handleCreateNewPlaylist()}>Create a new Playlists</button>
-
-        <span className='gray-txt' onClick={() => toggleCleanPage()}>Clean Page</span>
-
-        {newPlaylistCreated ? <NewPlaylistMessage content={newPlaylist} /> : ''}
-
-        {playlists.map((item) => (
-          <Playlist content={item} />
-        ))}
-      </>
-    );
-  }
+export default function Index() {
   return (
     <>
-      <NotSignedIn />
+      <Head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet" />
+      </Head>
+      <Home />
     </>
-  );
+  )
 }
