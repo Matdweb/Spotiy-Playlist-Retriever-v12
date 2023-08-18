@@ -7,7 +7,7 @@ function Modal({ toggleModal }) {
         song: "Photograph"
     }, {
         artist: "Taylor Swift",
-        song: "Mad Love"
+        song: "Bad Blood"
     }];
 
     return (
@@ -18,7 +18,7 @@ function Modal({ toggleModal }) {
                     can’t choose the songs in your new playlists</p>
 
                 <p>For now your playlists has this songs:</p>
-                <p className={styles.songsContainer}>
+                <div className={styles.songsContainer}>
                     {defaultSongs.map((element, i) => {
                         return (
                             <>
@@ -28,7 +28,7 @@ function Modal({ toggleModal }) {
                             </>
                         )
                     })}
-                </p>
+                </div>
             </div>
         </div>
     )

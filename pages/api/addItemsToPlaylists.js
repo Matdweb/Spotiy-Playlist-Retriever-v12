@@ -19,7 +19,7 @@ const addItemsToPlaylists = async (req, res) => {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-            "uris": ["spotify:track:1HNkqx9Ahdgi1Ixy2xkKkL"],
+            "uris": ["spotify:track:1HNkqx9Ahdgi1Ixy2xkKkL","spotify:track:0TvQLMecTE8utzoNmvXRbK"],
             "position": 0
         })
     })
