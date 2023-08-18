@@ -9,7 +9,7 @@ function Modal({ toggleModal }) {
     }, {
         id: 1,
         artist: "Taylor Swift",
-        song: "Bad Love"
+        song: "Bad Blood"
     }];
 
     return (
