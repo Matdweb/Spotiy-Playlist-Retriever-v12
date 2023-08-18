@@ -1,5 +1,5 @@
 'use client'
-import { useSession, signIn, signOut } from 'next-auth/react';
+import { useSession } from 'next-auth/react';
 import { useState } from 'react';
 import NotSignedIn from '../components/NotSignedIn';
 import SignIn from '../components/SignIn'
@@ -22,7 +22,6 @@ export default function Home() {
       console.log(e);
     }
   }
-
   
   const createNewPlaylist = async () => {
     try {

@@ -10,7 +10,7 @@
     align-items: center;
 }
 
-.container {
+.modal {
     background: #000;
     width: 40rem;
     border-radius: 2rem;
@@ -20,6 +20,7 @@
     align-items: flex-start;
     flex-flow: column nowrap;
     padding: 3rem 2rem;
+    font-size: 1.5rem;
 }
 
 .title{
@@ -27,13 +28,9 @@
     margin-bottom: .5rem;
 }
 
-.msj{
+.message{
     font-size: 1.8rem;
     margin-bottom: 4rem;
-}
-
-.txt{
-    font-size: 1.5rem;
 }
 
 .songsContainer {
@@ -41,20 +38,8 @@
     flex-flow: row wrap;
 }
 
-.songsContainer p{
-    margin: 0 .3rem;
-}
-
-.songsContainer p:nth-child(1){
-    margin: 0;
-}
-
-.song{
-    opacity: .6;
-}
-
 @media only screen and (max-width: 425px) {
-    .msj{
+    .message{
         font-size: 1.2rem;
         margin-bottom: 3rem;
     }
