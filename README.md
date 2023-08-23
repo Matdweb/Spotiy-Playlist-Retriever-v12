@@ -25,7 +25,7 @@ You can start editing the page by modifying `pages/index.js`. The page auto-upda
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-## More about this application's APIs
+## More about this application's APIs managment
 
 This app works with [`Next Auth`](https://next-auth.js.org/) for user autenthication
 
